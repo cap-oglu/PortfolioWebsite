@@ -2,19 +2,19 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
-import Col from 'react-bootstrap/Col';
+import seagullImg from '../assets/seagull.png';
 
 
 
 
 class NavBar extends React.Component {
     render() {
-        const { toggle } = this.props;
+        
     return (
         <>
-            <Navbar   expand="sm" style={{ backgroundColor: 'rgba(200, 200, 200, 0.1)' }} variant="light">
+            <Navbar   expand="sm" style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} variant="light">
                 <Container >
-                    <Navbar.Brand href="/">ME</Navbar.Brand>
+                    <Navbar.Brand href="/PortfolioWebsite">ME</Navbar.Brand>
                     <Navbar.Toggle
                         
                         aria-controls="responsive-navbar-nav"
@@ -24,13 +24,16 @@ class NavBar extends React.Component {
 
                     <Nav className="me-auto">
                    
-                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/PortfolioWebsite">Home</Nav.Link>
                         
-                        <Nav.Link href="/about">About Me</Nav.Link>
-                        <Nav.Link href="/stats">Stats</Nav.Link>
+                        <Nav.Link href="/PortfolioWebsite/#/about">About Me</Nav.Link>
+                        <Nav.Link href="/PortfolioWebsite/#/stats">Stats</Nav.Link>
                     </Nav>
                     <Navbar.Text>
-                            <a href="#login">Sairane Martı</a>
+                            
+                            <a href="/PortfolioWebsite/#/art">
+                            <img src={seagullImg} alt="Profile picture" class=" rounded-circle" width={50} height={50}  />
+                            </a>
                     </Navbar.Text>
                     </Navbar.Collapse>
                     
