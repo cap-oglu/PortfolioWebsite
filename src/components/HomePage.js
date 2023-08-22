@@ -2,6 +2,9 @@ import profileImg from '../assets/profilePicture.jpeg';
 import NavBar from './Navbar';
 import Footer from './Footer';
 import React, { useState } from 'react';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdb-react-ui-kit';
+import Button from '@mui/material/Button';
+
 export default class HomePage extends React.Component {
     render() {
 
@@ -21,8 +24,8 @@ export default class HomePage extends React.Component {
                 <main class="main">
                     <section id="about">
                         <h2>Preface</h2>
-                        <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className="d-flex flex-column  flex-sm-row  p-2">
-                            <div className="p-2">
+                        <div  className="d-flex flex-column  flex-sm-row   my-2 square border border-dark">
+                            <div className="p-2" style={{ backgroundColor: 'rgba(76, 152, 105, 0.1)' }}>
                                 <img src={profileImg} alt="Profile" class="img-fluid" />
                             </div>
                             <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className="d-flex flex-column p-2">
@@ -31,8 +34,8 @@ export default class HomePage extends React.Component {
                                     <p>
                                         I am a single dot in the universe dealing with life, its difficulties, unknowns and its unprecented hooks.
                                         This life is a journey that we all pass through. We live through, learn from it, sometimes fall and get up.
-                                        From my teenage times, I associate life with zigzaz, a frequency that beats in us and outside. This life is in
-                                        the moment of a heart beat and clock tick and we think, seek and this website will include The Me.
+                                        From my teenage times, I associate life with zigzag, a frequency that beats in us and outside. This life is in
+                                        the moment of a heart beat and clock tick and we think, seek and try to find meaning.
                                     </p>
                                 </div>
                             </div>
@@ -43,22 +46,51 @@ export default class HomePage extends React.Component {
 
 
                     <section id="about">
-                        <h2>Preface</h2>
-                        <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className="d-flex flex-column  flex-sm-row  p-2">
-                            <div className="p-2">
-                                <img src={profileImg} alt="Profile" class="img-fluid" />
-                            </div>
-                            <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className="d-flex flex-column p-2">
-                                <div className="p-2"> <p>Hi visitor, I am Ahmet Ramazan.</p></div>
-                                <div className="p-2">
-                                    <p>
-                                        I am a single dot in the universe dealing with life, its difficulties, unknowns and its unprecented hooks.
-                                        This life is a journey that we all pass through. We live through, learn from it, sometimes fall and get up.
-                                        From my teenage times, I associate life with zigzaz, a frequency that beats in us and outside. This life is in
-                                        the moment of a heart beat and clock tick and we think, seek and this website will include The Me.
-                                    </p>
-                                </div>
-                            </div>
+
+
+
+                        <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }} className="d-flex flex-column flex-md-row p-2">
+                            <MDBCard  background='dark' border='light' alignment='center' className='text-white mx-1 rounded-0' >
+                                <MDBCardBody>
+                                    <MDBCardTitle>Projects</MDBCardTitle>
+                                    <MDBCardText>With supporting text below as a natural lead-in to additional content.</MDBCardText>
+                                    
+                                    <Button href='#' color='inherit' variant="outlined" >Outlined</Button>
+                                </MDBCardBody>
+                            </MDBCard>
+                            <br />
+                            
+                            <MDBCard border='dark' background='white' alignment='center' className='mx-1 rounded-0'>
+                                <MDBCardBody>
+                                    <MDBCardTitle>Read Books</MDBCardTitle>
+                                    <MDBCardText>With supporting text below as a natural lead-in to additional content.</MDBCardText>
+                                    
+                                    <Button href='#' color='inherit' variant="outlined" size='medium' >GO</Button>  
+                                </MDBCardBody>
+                            </MDBCard>
+
+                            <br />
+
+                            <MDBCard border='dark' background='white' alignment='center' className='mx-1 rounded-0'>
+                                <MDBCardBody>
+                                    <MDBCardTitle>Read Articles</MDBCardTitle>
+                                    <MDBCardText>With supporting text below as a natural lead-in to additional content.</MDBCardText>
+                                    <Button href='#' color='inherit' variant="outlined" size='medium' >GO</Button>
+                                </MDBCardBody>
+                            </MDBCard>
+
+                            <br />
+
+                            <MDBCard  border='dark' background='white' alignment='center' className='mx-1 rounded-0'>
+                                <MDBCardBody>
+                                    <MDBCardTitle>Watched Movies</MDBCardTitle>
+                                    <MDBCardText>With supporting text below as a natural lead-in to additional content.</MDBCardText>
+                                    <Button href='#' color='inherit' variant="outlined" size='medium' >GO</Button>
+                                </MDBCardBody>
+                            </MDBCard>
+
+
+
 
                         </div>
 

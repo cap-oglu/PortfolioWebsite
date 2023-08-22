@@ -9,3 +9,25 @@
 .main{
     margin: 1vw 5vw;
 }
+
+hr{
+    color: black;
+    margin: 0;
+    opacity: 1;
+    
+
+}  
+
+#cv-header{
+    font-size: 18px;
+    
+    margin: 0;
+    padding: 0;
+}
+
+#inline-hr{
+    opacity: 0.25;
+    width: 90%;
+    align-self: center;
+}
+

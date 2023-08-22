@@ -2,16 +2,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
-import seagullImg from '../assets/seagull.png';
+import seagullImg from '../assets/seagull_logo.png';
 
 
-
+//kuş resmine bastığında animasyon felan olacak
+//https://levelup.gitconnected.com/integrating-p5-sketches-into-your-react-app-de44a8c74e91 ps5 react için
 
 class NavBar extends React.Component {
     render() {
         
     return (
-        <>
+        <>  
             <Navbar   expand="sm" style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} variant="light">
                 <Container >
                     <Navbar.Brand href="/PortfolioWebsite">ME</Navbar.Brand>
@@ -40,6 +41,7 @@ class NavBar extends React.Component {
                     
                 </Container>
             </Navbar>
+            <hr />
         </>
     );
 }

@@ -2,6 +2,11 @@ import NavBar from './Navbar';
 import Footer from './Footer';
 import React, { useState } from 'react';
 import Sketch from "react-p5";
+
+
+
+
+//burada da farklı penceleler oluşturulacak farklı sanatsal şeyler için mesela bir tanesi yuvarlaklar oluşturacak bir tanesi da çizgiler oluşturacak felan
 export default class ArtPage extends React.Component {
 
     render() {
@@ -38,8 +43,9 @@ export default class ArtPage extends React.Component {
                 <main class="main">
                 <h2 className="text-center">Experimental</h2>
                 <section id="art">
-                <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className="d-flex flex-column justify-content-center flex-sm-row  p-2">
-                    <Sketch setup={setup} draw={draw} />
+                <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className="d-flex flex-column
+                justify-content-center justify-content-xs-center flex-sm-row  p-2">
+                    <Sketch style={{'border-style':'solid'}} setup={setup} draw={draw} />
                 </div>
 
                 </section>

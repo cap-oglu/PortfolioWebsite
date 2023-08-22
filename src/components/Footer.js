@@ -3,8 +3,9 @@ import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-k
 
 export default function Footer() {
   return (
-    //make footer sticky to bottom
+    <>
 
+    <hr />
     <MDBFooter style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }} className='text-center text-lg-start text-muted'>
      
 
@@ -15,5 +16,6 @@ export default function Footer() {
         
       </div>
     </MDBFooter>
+    </>
   );
 }
