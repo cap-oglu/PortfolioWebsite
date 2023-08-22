@@ -1,4 +1,3 @@
-import profileImg from '../assets/profilePicture.jpeg';
 import React from 'react';
 import NavBar from './Navbar';
 import Footer from './Footer';

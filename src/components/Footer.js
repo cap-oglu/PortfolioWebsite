@@ -1,7 +1,7 @@
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import React from 'react';
 
-
-export default function Footer() {
+function Footer() {
   return (
     <>
 
@@ -19,3 +19,5 @@ export default function Footer() {
     </>
   );
 }
+
+export default Footer;

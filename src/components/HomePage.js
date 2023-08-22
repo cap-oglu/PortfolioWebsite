@@ -4,6 +4,7 @@ import Footer from './Footer';
 import React, { useState } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdb-react-ui-kit';
 import Button from '@mui/material/Button';
+import ExcelToVCFConverter from './ExcelToVCFConverter';
 
 export default class HomePage extends React.Component {
     render() {
@@ -94,6 +95,11 @@ export default class HomePage extends React.Component {
 
                         </div>
 
+                    </section>
+                    <section id="about">
+                        <div  className="d-flex flex-column  flex-sm-row justify-content-center align-items-center p-2 ">
+                        <ExcelToVCFConverter />
+                        </div>
                     </section>
                 </main>
 

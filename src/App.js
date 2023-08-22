@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import AboutMe from './components/AboutMePage';
 import Stats from './components/StatsPage';
 import ArtPage from './components/ArtPage';
+import React from 'react';
 
 
 function App() {
