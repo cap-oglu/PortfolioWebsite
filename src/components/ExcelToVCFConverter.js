@@ -11,6 +11,13 @@ function ExcelToVCFConverter() {
             TEL;TYPE=${vcard.tel[0].type}:${vcard.tel[0].value}
             END:VCARD`;
     };
+    const handleDownload = () => {
+        // Trigger the download by creating a virtual link and clicking it
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(new Blob([vcfData], { type: 'text/vcard' }));
+        link.download = 'contacts.vcf';
+        link.click();
+    };
     const handleFileUpload = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
@@ -32,6 +39,17 @@ function ExcelToVCFConverter() {
             });
 
             const vcfContent = vcfArray.join('\n');
+
+            const blob = new Blob([vcfContent], { type: 'text/vcard' });
+
+            // Create a download link for the Blob
+            const url = URL.createObjectURL(blob);
+
+        
+
+            // Clean up the URL
+            URL.revokeObjectURL(url);
+
             setVCFData(vcfContent);
         };
 
@@ -39,10 +57,25 @@ function ExcelToVCFConverter() {
     };
 
     return (
-        <div>
-            <input type="file" accept=".xlsx" onChange={handleFileUpload} />
-            <textarea rows="10" cols="50" value={vcfData} readOnly />
+        <div className="container mt-5">
+        <div className="row justify-content-center">
+            <div className="col-md-6">
+                <div className="card">
+                    <div className="card-body">
+                        <h4 className="card-title">Excel to VCF Converter</h4>
+                        <input type="file" accept=".xlsx" onChange={handleFileUpload} className="form-control mb-3" />
+                        <button onClick={handleDownload} className="btn btn-primary mb-3">Download VCF File</button>
+                        <textarea
+                            rows="10"
+                            className="form-control"
+                            value={vcfData}
+                            readOnly
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
     );
 }
 
