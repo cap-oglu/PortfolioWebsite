@@ -4,12 +4,13 @@ import * as XLSX from 'xlsx';
 
 function ExcelToVCFConverter() {
     const [vcfData, setVCFData] = useState('');
+    const [namePrefix, setNamePrefix] = useState(''); // State for prefix input
     const generateVCard = (vcard) => {
-        return `BEGIN:VCARD
-            VERSION:${vcard.version}
-            FN:${vcard.fn}
-            TEL;TYPE=${vcard.tel[0].type}:${vcard.tel[0].value}
-            END:VCARD`;
+        return `BEGIN:VCARD 
+VERSION:${vcard.version}
+FN:${vcard.fn}
+TEL;TYPE=${vcard.tel[0].type}:${vcard.tel[0].value}
+END:VCARD`;
     };
     const handleDownload = () => {
         // Trigger the download by creating a virtual link and clicking it
@@ -29,10 +30,10 @@ function ExcelToVCFConverter() {
             const worksheet = workbook.Sheets[workbook.SheetNames[0]];
             const excelData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-            const vcfArray = excelData.map((row) => {
+            const vcfArray = excelData.slice(1).map((row) => {
                 const vcard = {
                     version: '4.0',
-                    fn: row[0], // Assuming the name is in the first column
+                    fn: `${namePrefix} ${row[0]}`, // Adding prefix to name
                     tel: [{ type: 'cell', value: row[1] }] // Assuming the phone number is in the second column
                 };
                 return generateVCard(vcard);
@@ -63,6 +64,13 @@ function ExcelToVCFConverter() {
                 <div className="card">
                     <div className="card-body">
                         <h4 className="card-title">Excel to VCF Converter</h4>
+                        <input
+                                type="text"
+                                placeholder="Enter Name Prefix"
+                                className="form-control mb-3"
+                                value={namePrefix}
+                                onChange={(e) => setNamePrefix(e.target.value)}
+                        />
                         <input type="file" accept=".xlsx" onChange={handleFileUpload} className="form-control mb-3" />
                         <button onClick={handleDownload} className="btn btn-primary mb-3">Download VCF File</button>
                         <textarea
